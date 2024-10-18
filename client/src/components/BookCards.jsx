@@ -55,7 +55,7 @@ const BookCards = ({headline, books}) => {
                 </div>
                 <div>
                   <div>
-                  <h3 className='font-bold'>{book.bookTitle}</h3>
+                  <h3 className='font-semibold'>{book.bookTitle}</h3>
                   <p>{book.autherName}</p>
                   </div>
                   <div>
