@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import proPic from "../assets/profile.jpg"
 
 //react icons
 import { FaBarsStaggered, FaBlog, FaXmark } from "react-icons/fa6";
 import { AuthContext } from '../context/AuthProvider';
+import { Avatar } from 'flowbite-react';
+import AccountMenu from './AccontMenu';
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,9 +14,20 @@ const NavBar = () => {
 
     const { user } = useContext(AuthContext);
 
+
     //toggle menu
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    }
+
+    const profileDrop = () => {
+        return (
+            <div className='flex justify-center content-center items-center'>
+                <Avatar img={proPic} alt="avatar of Jese" rounded className='w-10 mx-2' />
+                <p>{user.username}</p>
+            </div>
+            
+        )
     }
 
     useEffect(() => {
@@ -45,8 +59,7 @@ const NavBar = () => {
     <header className='w-full bg-transparent fixed top-0 left-0 right-0 transition-all ease-in duration-300 z-50'>
         <nav className={`py-4 lg:px-24 px-4 ${isSticky ? "sticky top-0 left-0 right-0 bg-blue-300" : ""}`}>
             <div className='flex justify-between items-center text-base gap-8'>
-                {/* {logo} */}
-                <Link to="/" className='text-2xl font-bold text-blue-700 flex items-center gap-2'><FaBlog className='inline-block'/>Books</Link>
+                <Link to="/" className='text-2xl font-bold text-blue-700 flex items-center gap-2'><FaBlog className='inline-block'/>Book Haven</Link>
 
                 {/* nav item for large screens */}
                 <ul className='md:flex space-x-12 hidden'>
@@ -57,10 +70,14 @@ const NavBar = () => {
 
                 {/* Btn for large screens */}
                 <div className='space-x-12 hidden lg:flex items-center'>
-                    <button><FaBarsStaggered className='w-5 hover:text-blue-700'/></button>
-                    {
-                        user? user.email : ""
-                    }
+                    <button className='flex justify-center items-center content-center'>
+                        {/* <FaBarsStaggered className='w-5 hover:text-blue-700'/> */}
+                        {/* <Avatar img={proPic} alt="avatar of Jese" rounded className='w-10' /> */}
+                        {
+                            user?  <AccountMenu/> : <FaBarsStaggered className='w-5 hover:text-blue-700'/>
+                        }
+                    </button>
+                    
                 </div>
 
                 {/* menu for sm screens */}
