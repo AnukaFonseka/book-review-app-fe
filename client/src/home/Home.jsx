@@ -7,6 +7,7 @@ import OtherBooks from './OtherBooks'
 import Review from './Review'
 
 const Home = () => {
+
   return (
     <div>
       <Banner/>
