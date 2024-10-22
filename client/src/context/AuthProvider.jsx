@@ -9,7 +9,7 @@ const AuthProvider = ({children}) => {
     const createUser = async (name, email, username, password) => {
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:3000/users/', {
+            const response = await fetch('http://51.20.82.6/:3000/users/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
