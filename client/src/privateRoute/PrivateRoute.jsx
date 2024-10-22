@@ -13,9 +13,15 @@ const PrivateRoute = ({children}) => {
                 </div>
     } 
 
-    if(user) {
+    if(user?.roleId == 1) {
         console.log(user)
         return children;
+    } 
+    
+    if(user?.roleId == 2) {
+       return(
+        <Navigate to="/fobbidden" state={{from: location}} replace ></Navigate>
+       )
     }
 
     return (

@@ -19,7 +19,7 @@ const AuthProvider = ({children}) => {
                     email,
                     username,
                     password,
-                    roleId: 1, // Default role ID, you can change this as needed
+                    roleId: user?.roleId || 2, // Default role ID, you can change this as needed
                 }),
             });
             const data = await response.json();

@@ -20,16 +20,6 @@ const NavBar = () => {
         setIsMenuOpen(!isMenuOpen);
     }
 
-    const profileDrop = () => {
-        return (
-            <div className='flex justify-center content-center items-center'>
-                <Avatar img={proPic} alt="avatar of Jese" rounded className='w-10 mx-2' />
-                <p>{user.username}</p>
-            </div>
-            
-        )
-    }
-
     useEffect(() => {
         const handleScroll = () => {
             if(window.scrollY > 100) {
@@ -50,10 +40,10 @@ const NavBar = () => {
     //nav Items
     const navItems = [
         {link: "Home", path: "/"},
-        {link: "About", path: "/"},
+        {link: "About", path: "#"},
         {link: "Shop", path: "/shop"},
-        {link: "Sell Your Book", path: "/admin/dashboard"},
-        {link: "Blog", path: "/"}
+        {link: "Manage Books", path: "/admin/dashboard"},
+        {link: "Blog", path: "#"}
     ]
   return (
     <header className='w-full bg-transparent fixed top-0 left-0 right-0 transition-all ease-in duration-300 z-50'>

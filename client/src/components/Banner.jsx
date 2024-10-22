@@ -8,7 +8,7 @@ const Banner = () => {
             {/* left side */}
             <div>
                 <div className='md:w-1/2 space-y-8 h-full'>
-                    <h2 className='text-5xl font-bold leading-snug to-black'>Buy and Sell Your Books 
+                    <h2 className='text-5xl font-bold leading-snug to-black'>Buy and Read the Best Books 
                         <span className='text-blue-700'> for the Best Prices</span>
                     </h2>
                     <p className='md:w-4/5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit eius tempora iste eveniet, 

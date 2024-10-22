@@ -14,6 +14,7 @@ import Logout from '@mui/icons-material/Logout';
 import { Link } from 'react-router-dom';
 import proPic from "../assets/profile.jpg"
 import { AuthContext } from '../context/AuthProvider';
+import { BiUser } from 'react-icons/bi';
 
 export default function AccountMenu() {
     const { user } = React.useContext(AuthContext);
@@ -39,7 +40,7 @@ export default function AccountMenu() {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar className='!bg-teal-100 !text-black !outline outline-black' sx={{ width: 32, height: 32 }}></Avatar>
+            <Avatar className='!bg-transparent hover:!bg-gray-200 !text-black !outline outline-black' sx={{ width: 32, height: 32 }}></Avatar>
           </IconButton>
         </Tooltip>
         {/* <Typography sx={{ minWidth: 100 }}>{user.username}</Typography> */}
@@ -87,9 +88,9 @@ export default function AccountMenu() {
         <Divider />
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <Settings fontSize="small" />
+            <BiUser fontSize="small" />
           </ListItemIcon>
-          Settings
+          {user.role}
         </MenuItem>
         <Link to={'/logout'}><MenuItem onClick={handleClose}>
           <ListItemIcon>

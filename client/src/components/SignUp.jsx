@@ -5,7 +5,7 @@ import googlrLogo from '../assets/google-logo.svg'
 
 const SignUp = () => {
 
-    const { createUser, user } = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
 
     const [error, setError] = useState("");
 
@@ -16,9 +16,7 @@ const SignUp = () => {
 
 
     const handleSignUp = async (event) => {
-        if(user.roleId == 1) {
-            const roleId = 1
-        }
+        
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;

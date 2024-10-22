@@ -16,6 +16,7 @@ import SignUp from "../components/SignUp";
 import Login from "../components/Login";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import Logout from "../components/Logout";
+import ForbiddenPage from "../components/ForbiddenPage";
 
   const router = createBrowserRouter([
     {
@@ -76,7 +77,10 @@ import Logout from "../components/Logout";
     }, {
       path: "logout",
       element: <Logout />
-    } 
+    }, {
+      path: "fobbidden",
+      element: <ForbiddenPage/>
+    }
   ]);
 
   export default router
