@@ -9,7 +9,7 @@ const AuthProvider = ({children}) => {
     const createUser = async (name, email, username, password) => {
         setLoading(true);
         try {
-            const response = await fetch('http://51.20.82.6:3000/users/', {
+            const response = await fetch('http://51.21.2.113:3000/users/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const AuthProvider = ({children}) => {
     const login = async (username, password) => {
         setLoading(true);
         try {
-            const response = await fetch('http://51.20.82.6:3000/users/sign-in', {
+            const response = await fetch('http://51.21.2.113:3000/users/sign-in', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

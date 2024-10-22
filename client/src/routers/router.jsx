@@ -17,6 +17,7 @@ import Login from "../components/Login";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import Logout from "../components/Logout";
 import ForbiddenPage from "../components/ForbiddenPage";
+import AddUser from "../dashboard/AddUser";
 
   const router = createBrowserRouter([
     {
@@ -42,7 +43,7 @@ import ForbiddenPage from "../components/ForbiddenPage";
         {
             path: '/book/:id',
             element: <SingleBook/>,
-            loader: ({params}) => fetch(`http://51.20.82.6:3000/books/${params.id}`)
+            loader: ({params}) => fetch(`http://51.21.2.113:3000/books/${params.id}`)
         },
       ]
     },
@@ -63,9 +64,13 @@ import ForbiddenPage from "../components/ForbiddenPage";
           element: <ManageBooks/>
         },
         {
+          path: 'add-user',
+          element: <AddUser/>
+        } ,
+        {
           path: 'edit-book/:id',
           element: <EditBook/>,
-          loader: ({params}) => fetch(`http://51.20.82.6:3000/books/${params.id}`)
+          loader: ({params}) => fetch(`http://51.21.2.113:3000/books/${params.id}`)
         }
       ]
     }, {
@@ -80,7 +85,8 @@ import ForbiddenPage from "../components/ForbiddenPage";
     }, {
       path: "fobbidden",
       element: <ForbiddenPage/>
-    }
+    } ,
+   
   ]);
 
   export default router

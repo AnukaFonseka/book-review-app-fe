@@ -22,8 +22,8 @@ const SideBar = () => {
           <Sidebar.Item href="/admin/dashboard/manage" icon={HiInbox}>
             Manage Books
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiUser}>
-            Users
+          <Sidebar.Item href="/admin/dashboard/add-user" icon={HiUser}>
+            Add User
           </Sidebar.Item>
           <Sidebar.Item href="/" icon={HiHome}>
             Home
