@@ -11,6 +11,7 @@ import './BannerCard.css'
 import { EffectCards } from 'swiper/modules';
 
 const BannerCard = () => {
+  console.log("hello")
   return (
     <div className='banner'>
         <Swiper
