@@ -82,7 +82,7 @@ export default function AccountMenu() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
+          <Avatar /> {user.username}
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>

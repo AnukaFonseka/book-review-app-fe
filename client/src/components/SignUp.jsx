@@ -5,7 +5,7 @@ import googlrLogo from '../assets/google-logo.svg'
 
 const SignUp = () => {
 
-    const { createUser, loginWithGoogle } = useContext(AuthContext);
+    const { createUser, user } = useContext(AuthContext);
 
     const [error, setError] = useState("");
 
@@ -16,6 +16,9 @@ const SignUp = () => {
 
 
     const handleSignUp = async (event) => {
+        if(user.roleId == 1) {
+            const roleId = 1
+        }
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
@@ -31,19 +34,6 @@ const SignUp = () => {
         }
     };
 
-    //signup using google account
-    const handleRegister = () => {
-        loginWithGoogle().then((result) => {
-            const user = result.user;
-            alert("Sign up Succesessfully")
-            navigate(from, {replace: true})
-        }).catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            setError(errorMessage)
-            // ..
-          });
-    }
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
             <div className="relative py-3 sm:max-w-xl sm:mx-auto">
