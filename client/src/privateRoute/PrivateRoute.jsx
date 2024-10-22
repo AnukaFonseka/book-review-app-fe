@@ -14,6 +14,7 @@ const PrivateRoute = ({children}) => {
     } 
 
     if(user) {
+        console.log(user)
         return children;
     }
 
