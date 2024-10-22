@@ -50,10 +50,10 @@ const NavBar = () => {
     //nav Items
     const navItems = [
         {link: "Home", path: "/"},
-        {link: "About", path: "/about"},
+        {link: "About", path: "/"},
         {link: "Shop", path: "/shop"},
         {link: "Sell Your Book", path: "/admin/dashboard"},
-        {link: "Blog", path: "/blog"}
+        {link: "Blog", path: "/"}
     ]
   return (
     <header className='w-full bg-transparent fixed top-0 left-0 right-0 transition-all ease-in duration-300 z-50'>
