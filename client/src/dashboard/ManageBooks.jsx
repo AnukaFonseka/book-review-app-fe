@@ -8,14 +8,14 @@ const ManageBooks = () => {
   const [allBooks, setAllBooks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/books").then(res => res.json()).then(data => setAllBooks(data.payload))
+    fetch("http://51.20.82.6:3000/books").then(res => res.json()).then(data => setAllBooks(data.payload))
   }, [])
 
   const token = localStorage.getItem('token')
 
   //delete a book
   const handleDelete = (id) => {
-    fetch(`http://localhost:3000/books/${id}`, {
+    fetch(`http://51.20.82.6:3000/books/${id}`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${token}`

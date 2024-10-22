@@ -40,7 +40,7 @@ const AddReviewModal = ({ bookId, userId }) => {
 
     try {
         const response = await axios.post(
-          'http://localhost:3000/ratings/', 
+          'http://51.20.82.6:3000/ratings/', 
           reviewData,
           {
             headers: {

@@ -41,7 +41,7 @@ import Logout from "../components/Logout";
         {
             path: '/book/:id',
             element: <SingleBook/>,
-            loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
+            loader: ({params}) => fetch(`http://51.20.82.6:3000/books/${params.id}`)
         },
       ]
     },
@@ -64,7 +64,7 @@ import Logout from "../components/Logout";
         {
           path: 'edit-book/:id',
           element: <EditBook/>,
-          loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
+          loader: ({params}) => fetch(`http://51.20.82.6:3000/books/${params.id}`)
         }
       ]
     }, {

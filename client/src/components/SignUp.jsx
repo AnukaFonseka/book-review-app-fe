@@ -15,27 +15,6 @@ const SignUp = () => {
     const from = location.state?.from?.pathname || "/"
 
 
-    // const handleSignUp = (event) => {
-    //     event.preventDefault()
-    //     const form = event.target;
-    //     const email = form.email.value;
-    //     const password =form.password.value;
-
-    //     createUser(email, password).then((userCredential) => {
-    //         // Signed up 
-    //         const user = userCredential.user;
-    //         alert("Sign up Succesessfully")
-    //         navigate(from, {replace: true})
-    //         // ...
-    //       })
-    //       .catch((error) => {
-    //         const errorCode = error.code;
-    //         const errorMessage = error.message;
-    //         setError(errorMessage)
-    //         // ..
-    //       });
-    // }
-
     const handleSignUp = async (event) => {
         event.preventDefault();
         const form = event.target;

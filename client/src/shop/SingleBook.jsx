@@ -22,7 +22,7 @@ const SingleBook = () => {
 
     useEffect(() => {
         // Fetch book data by id
-        fetch(`http://localhost:3000/books/${id}`)
+        fetch(`http://51.20.82.6:3000/books/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBook(data.payload); // Set book data from the response payload
@@ -34,7 +34,7 @@ const SingleBook = () => {
             });
 
         // Fetch ratings and reviews for the book
-        fetch(`http://localhost:3000/ratings/${id}`)
+        fetch(`http://51.20.82.6:3000/ratings/${id}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data.payload); // Set reviews data from the response payload
@@ -44,7 +44,7 @@ const SingleBook = () => {
             });
         
         // Fetch average rating of the book
-        fetch(`http://localhost:3000/ratings/avgRating/${id}`)
+        fetch(`http://51.20.82.6:3000/ratings/avgRating/${id}`)
             .then(res => res.json())
             .then(data => {
                 setAvgRating(data.payload)

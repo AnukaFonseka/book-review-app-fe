@@ -47,7 +47,7 @@ const UploadBook = () => {
 
         const token = localStorage.getItem('token')
 
-        fetch("http://localhost:3000/books", {
+        fetch("http://51.20.82.6:3000/books", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
