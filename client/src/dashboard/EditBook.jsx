@@ -66,10 +66,13 @@ const EditBook = () => {
             bookTitle, autherName, imageURL, category, bookDiscription, bookPDFURL 
         }
 
+        const token = localStorage.getItem('token')
+
         fetch(`http://localhost:3000/books/${id}`, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(updatedBookObj)
         }).then(res => res.json()).then(data => {

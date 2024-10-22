@@ -45,10 +45,13 @@ const UploadBook = () => {
             bookTitle, autherName, imageURL, category, bookDiscription, bookPDFURL 
         }
 
+        const token = localStorage.getItem('token')
+
         fetch("http://localhost:3000/books", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(bookObj)
         }).then(res => res.json()).then(data => {
