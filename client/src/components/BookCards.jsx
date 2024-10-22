@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
-import { FaCartShopping } from 'react-icons/fa6';
+import { FaCartShopping, FaHeart } from 'react-icons/fa6';
 
 const BookCards = ({headline, books}) => {
 
@@ -50,7 +50,7 @@ const BookCards = ({headline, books}) => {
                 <div className='relative w-64'>
                   <img src={book.imageURL} alt="" className='h-96 w-64 cover'/>
                   <div className='absolute top-3 right-3 bg-blue-600 hover:bg-black p-2 rounded'>
-                    <FaCartShopping className='w-4 h-4 text-white'/>
+                    <FaHeart className='w-4 h-4 text-white'/>
                   </div>
                 </div>
                 <div>

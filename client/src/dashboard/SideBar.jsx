@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Sidebar } from "flowbite-react";
 import { BiBuoy } from "react-icons/bi";
-import { HiArrowSmRight, HiChartPie, HiInbox, HiOutlineCloudUpload, HiShoppingBag, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
+import { HiArrowSmRight, HiChartPie, HiHome, HiInbox, HiLogin, HiLogout, HiOutlineCloudUpload, HiShoppingBag, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
 import userImg from "../assets/profile.jpg"
 
 const SideBar = () => {
@@ -25,13 +25,13 @@ const SideBar = () => {
           <Sidebar.Item href="#" icon={HiUser}>
             Users
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiShoppingBag}>
-            Products
+          <Sidebar.Item href="/" icon={HiHome}>
+            Home
           </Sidebar.Item>
-          <Sidebar.Item href="/login" icon={HiArrowSmRight}>
+          <Sidebar.Item href="/login" icon={HiLogin}>
             Sign In
           </Sidebar.Item>
-          <Sidebar.Item href="/logout" icon={HiTable}>
+          <Sidebar.Item href="/logout" icon={HiLogout}>
             Log Out
           </Sidebar.Item>
         </Sidebar.ItemGroup>
