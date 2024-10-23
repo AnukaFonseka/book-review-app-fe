@@ -3,9 +3,11 @@ import BookCards from '../components/BookCards';
 
 const BestSellerBooks = () => {
     const [books, setBooks] = useState([]);
+    const baseURL = import.meta.env.VITE_BASE_URL;
+
 
     useEffect( () => {
-        fetch("http://51.21.2.113:3000/books/").then(res => res.json()).then(data => setBooks(data.payload.slice(1,10)))
+        fetch(`${baseURL}/books/`).then(res => res.json()).then(data => setBooks(data.payload.slice(1,10)))
     }, [])
   return (
     <div>

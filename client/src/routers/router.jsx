@@ -19,6 +19,9 @@ import Logout from "../components/Logout";
 import ForbiddenPage from "../components/ForbiddenPage";
 import AddUser from "../dashboard/AddUser";
 
+const baseURL = import.meta.env.VITE_BASE_URL;
+
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -43,7 +46,7 @@ import AddUser from "../dashboard/AddUser";
         {
             path: '/book/:id',
             element: <SingleBook/>,
-            loader: ({params}) => fetch(`http://51.21.2.113:3000/books/${params.id}`)
+            loader: ({params}) => fetch(`${baseURL}/books/${params.id}`)
         },
       ]
     },
@@ -70,7 +73,7 @@ import AddUser from "../dashboard/AddUser";
         {
           path: 'edit-book/:id',
           element: <EditBook/>,
-          loader: ({params}) => fetch(`http://51.21.2.113:3000/books/${params.id}`)
+          loader: ({params}) => fetch(`${baseURL}/books/${params.id}`)
         }
       ]
     }, {

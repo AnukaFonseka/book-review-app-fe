@@ -20,9 +20,12 @@ const SingleBook = () => {
 
     const [value, setValue] = useState(null)
 
+    const baseURL = import.meta.env.VITE_BASE_URL;
+
+
     useEffect(() => {
         // Fetch book data by id
-        fetch(`http://51.21.2.113:3000/books/${id}`)
+        fetch(`${baseURL}/books/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBook(data.payload); // Set book data from the response payload
@@ -34,7 +37,7 @@ const SingleBook = () => {
             });
 
         // Fetch ratings and reviews for the book
-        fetch(`http://51.21.2.113:3000/ratings/${id}`)
+        fetch(`${baseURL}/ratings/${id}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data.payload); // Set reviews data from the response payload
@@ -44,7 +47,7 @@ const SingleBook = () => {
             });
         
         // Fetch average rating of the book
-        fetch(`http://51.21.2.113:3000/ratings/avgRating/${id}`)
+        fetch(`${baseURL}/ratings/avgRating/${id}`)
             .then(res => res.json())
             .then(data => {
                 setAvgRating(data.payload)

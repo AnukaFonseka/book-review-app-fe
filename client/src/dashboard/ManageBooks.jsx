@@ -6,16 +6,18 @@ import { Link } from 'react-router-dom';
 const ManageBooks = () => {
 
   const [allBooks, setAllBooks] = useState([]);
+  const baseURL = import.meta.env.VITE_BASE_URL;
+
 
   useEffect(() => {
-    fetch("http://51.21.2.113:3000/books").then(res => res.json()).then(data => setAllBooks(data.payload))
+    fetch(`${baseURL}/books`).then(res => res.json()).then(data => setAllBooks(data.payload))
   }, [])
 
   const token = localStorage.getItem('token')
 
   //delete a book
   const handleDelete = (id) => {
-    fetch(`http://51.21.2.113:3000/books/${id}`, {
+    fetch(`${baseURL}/${id}`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${token}`

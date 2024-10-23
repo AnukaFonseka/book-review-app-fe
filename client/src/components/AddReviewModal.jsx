@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 const AddReviewModal = ({ bookId, userId }) => {
 
+  const baseURL = import.meta.env.VITE_BASE_URL;
+
+
   const [showModal, setShowModal] = useState(false);
   const [rating, setRating] = useState('');
   const [review, setReview] = useState('');
@@ -40,7 +43,7 @@ const AddReviewModal = ({ bookId, userId }) => {
 
     try {
         const response = await axios.post(
-          'http://51.21.2.113:3000/ratings/', 
+          `${baseURL}/ratings/`, 
           reviewData,
           {
             headers: {

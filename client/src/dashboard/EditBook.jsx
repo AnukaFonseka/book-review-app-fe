@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom'
 import { Button, Checkbox, Label, Select, Textarea, TextInput } from "flowbite-react";
 
 const EditBook = () => {
+
+    const baseURL = import.meta.env.VITE_BASE_URL;
+
     const { id } = useParams(); // Get the book id from the URL params
     const [book, setBook] = useState(null); // State to store the fetched book data
     const [loading, setLoading] = useState(true); // State to handle loading
@@ -30,7 +33,7 @@ const EditBook = () => {
 
     useEffect(() => {
         // Fetch book data by id
-        fetch(`http://51.21.2.113:3000/books/${id}`)
+        fetch(`${baseURL}/books/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBook(data.payload); // Set book data from the response payload
@@ -68,7 +71,7 @@ const EditBook = () => {
 
         const token = localStorage.getItem('token')
 
-        fetch(`http://51.21.2.113:3000/books/${id}`, {
+        fetch(`${baseURL}/books/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

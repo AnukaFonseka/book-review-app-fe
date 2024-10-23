@@ -4,6 +4,9 @@ import { Button, Checkbox, Label, Select, Textarea, TextInput } from "flowbite-r
 
 const UploadBook = () => {
 
+    const baseURL = import.meta.env.VITE_BASE_URL;
+
+
     const bookCategories = [
         "Fiction",
         "Non-Fiction",
@@ -47,7 +50,7 @@ const UploadBook = () => {
 
         const token = localStorage.getItem('token')
 
-        fetch("http://51.21.2.113:3000/books", {
+        fetch(`${baseURL}/books`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
